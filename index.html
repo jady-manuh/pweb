@@ -3,60 +3,78 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividades</title>
+    <title>Progrmação Web</title>  
     <style>
         /* Estilo geral */
         body {
-            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+           font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           background:
+        linear-gradient(135deg, #0d0d0d, #1a1a40, #2a2a7a);
+           color: #f0f0f0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+    
         }
 
         /* Container principal */
         .container {
-            text-align: center;
-            background-color: white;
+            background:rgba(255, 255, 255, 0.05);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 700px;
-			text-align:left;
+            border-radius: 1000px;
+            width: 150px;
+            box-shadow: 0 8px 25px 
+        rgba(0,0,0,0.6);
+            backdrop-filter: center;
+            border: 1px solid
+        rgba(255,255,255,0.15);
+        
+
         }
 
         /* Títulos */
         h1 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 0.5rem;
-			text-align:center;
+            font-size: 28px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            color: #00e6e6;
+            text-shadow: 0px 0px 10px #00e6e6;
         }
 
-        h3 {
-            font-size: 1.5rem;
-            color: #666;
-            margin-bottom: 2rem;
-			text-align:center;
+        .nomes{
+            margin-bottom: 30px;
+            font-size: 16px;
+            color: #d1d1d1;
         }
 
         /* Links */
-        a {
-            display: block;
-            font-size: 1.2rem;
-            margin: 10px 0;
-            text-decoration: none;
-            color: #3498db;
-            transition: color 0.3s ease;
+        ul li {
+            margin: 12px 0;
         }
 
-        a:hover {
-            color: #2980b9;
+        a {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 102px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            background: 
+        linear-gradient(90deg,#ff0066,#ff6600);
+            box-shadow: 0 4px 15px 
+        rgba(0,0,0,0.4);
+            transition: 0.3s ease;
+
+        }
+
+        a:hover{
+            background: 
+        linear-gradient(90deg,#ff6600,#ff0066);
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px 
+        rgba(0,0,0,0.6);
         }
 
         </style>
@@ -66,16 +84,17 @@
 
     <div class="container">
    		<h3>PROGRAMAÇÃO WEB</h3>
-		
+		<div class="nomes">
 		<li>jady emanuely</li>
 		<li>silvia cristina</li>
-		
+		</div>
         
 		<br>
-
-        <a href="01">Atividade 01 - Aguardando... </a> <br>
-        <a href="02">Atividade 02 - Aguardando...</a>  <br>
-        <a href="03">Atividade 03 - Aguardando...</a> <br>
+        <ul>
+           <li><a href="01">Atividade 01 - Aguardando... </a> <br></li>
+           <li><a href="02">Atividade 02 - Aguardando...</a>  <br></li>
+           <li><a href="03">Atividade 03 - Aguardando...</a> <br></li>
+        </ul>
     </div>
 
 </body>

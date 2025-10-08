@@ -17,9 +17,15 @@ function raiz(numero) {
     const resultado = Math.sqrt(49);
     alert("A raiz quadrada de " + 49 + " é " + resultado);
 }
-function escreverNaDiv(){
-    texto = prompt('digite um texto qualquer');
+function escreverNaDiv(texto){
     document.getElementById("saidaDiv").innerHTML = texto;
+}
+
+
+
+function escreverTextoDinamico(){
+    texto = prompt('digite um texto qualquer');
+    document.getElementById("textoDinamico").innerHTML = texto;
 }
 
     </script>
@@ -33,7 +39,7 @@ function escreverNaDiv(){
     <hr>
 
     <h1>Escrevendo na Div</h1>
-    <button onclick="escreverNaDiv()">Escrever</button>
+    <button onclick="escreverNaDiv('<h1>Programação web</h1>')">Escrever</button>
     <div id="saidaDiv"></div>
 
     <hr>

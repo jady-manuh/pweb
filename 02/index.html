@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -7,26 +7,22 @@
     <script>
         function raiz(numero) {
     const resultado = Math.sqrt(25);
-    alert("A raiz quadrada de " + 25 + " é " + resultado);
+    alert("A raiz quadrada de " + 25+ " é " + resultado);
 }
-   function raiz(numero) {
+function raiz(numero) {
     const resultado = Math.sqrt(36);
     alert("A raiz quadrada de " + 36 + " é " + resultado);
 }
-   function raiz(numero) {
+function raiz(numero) {
     const resultado = Math.sqrt(49);
     alert("A raiz quadrada de " + 49 + " é " + resultado);
 }
-  
-   function escreverNaDiv(texto) {
+function escreverNaDiv(){
+    texto = prompt('digite um texto qualquer');
     document.getElementById("saidaDiv").innerHTML = texto;
 }
 
-
-
-
     </script>
-
 </head>
 <body>
     <h1>Raiz Quadrada</h1>
@@ -37,7 +33,7 @@
     <hr>
 
     <h1>Escrevendo na Div</h1>
-    <button onclick="escreverNaDiv(texto)">Escrever</button>
+    <button onclick="escreverNaDiv()">Escrever</button>
     <div id="saidaDiv"></div>
 
     <hr>

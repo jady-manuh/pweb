@@ -21,12 +21,21 @@ function escreverNaDiv(texto){
     document.getElementById("saidaDiv").innerHTML = texto;
 }
 
-
-
 function escreverTextoDinamico(){
     texto = prompt('digite um texto qualquer');
     document.getElementById("textoDinamico").innerHTML = texto;
 }
+function escreveNumeros() {
+    let n = prompt("Digite um número:");
+
+    let resultado = "";
+    for (let i = 1; i <= n; i++) {
+        resultado += i + " ";
+    }
+
+    document.getElementById("numeros").innerText = resultado;
+}
+
 
     </script>
 </head>

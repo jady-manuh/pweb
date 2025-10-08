@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,41 @@ function escreveNumeros() {
 }
 
 
+function aplicarEstiloFofo() {
+    document.body.style.backgroundColor = "#f3e5f5";
+    document.body.style.fontFamily = "Arial, sans-serif";
+    document.body.style.color = "#4a148c";
+
+    let botoes = document.getElementsByTagName("button");
+    for (let btn of botoes) {
+        btn.style.backgroundColor = "#b39ddb";
+        btn.style.border = "none";
+        btn.style.padding = "10px 15px";
+        btn.style.margin = "5px 0";
+        btn.style.borderRadius = "8px";
+        btn.style.color = "#ffffff";
+        btn.style.cursor = "pointer";
+        btn.style.fontWeight = "bold";
+    }
+
+    let titulos = document.getElementsByTagName("h1");
+    for (let h1 of titulos) {
+        h1.style.color = "#6a1b9a";
+    }
+
+    let saidas = document.querySelectorAll("div, p");
+    for (let el of saidas) {
+        el.style.backgroundColor = "#e1bee7";
+        el.style.padding = "10px";
+        el.style.borderRadius = "5px";
+        el.style.marginTop = "5px";
+    }
+}
+
+window.onload = aplicarEstiloFofo;
+
     </script>
+
 </head>
 <body>
     <h1>Raiz Quadrada</h1>

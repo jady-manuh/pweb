@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript</title>
+    <script src="script.js" defer></script>
+    <script>
+        function raiz(numero) {
+    const resultado = Math.sqrt(25);
+    alert("A raiz quadrada de " + 25 + " é " + resultado);
+}
+
+    </script>
+
+</head>
+<body>
+    <h1>Raiz Quadrada</h1>
+    <button onclick="raiz(25)">Raiz de 25</button><br><br>
+    <button onclick="raiz(36)">Raiz de 36</button><br><br>
+    <button onclick="raiz(49)">Raiz de 49</button>
+
+    <hr>
+
+    <h1>Escrevendo na Div</h1>
+    <button onclick="escreverNaDiv()">Escrever</button>
+    <div id="saidaDiv"></div>
+
+    <hr>
+
+    <h1>Escrevendo na Texto Dinâmico</h1>
+    <button onclick="escreverTextoDinamico()">Escrever</button>
+    <p id="textoDinamico"></p>
+
+    <hr>
+
+    <h1>Desafio</h1>
+    <button onclick="escreveNumeros()">Escreve Números</button>
+    <div id="numeros"></div>
+</body>
+</html>

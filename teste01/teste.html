@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Frutas</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f3e6ff;
+      color: #5e2b97;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    h1 {
+      color: #a564c8;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #d9b3ff;
+      margin: 5px auto;
+      width: 200px;
+      border-radius: 10px;
+      padding: 10px;
+      font-weight: bold;
+      box-shadow: 0 0 8px #c69eff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍓 Lista de Frutas 🍇</h1>
+  <ul id="listaFrutas"></ul>
+
+  <script>
+    // Criando um array com var
+    var frutas = ["Maçã", "Banana", "Uva", "Pera", "Abacaxi"];
+
+    // Selecionando a tag <ul> pelo id
+    var lista = document.getElementById("listaFrutas");
+
+    // Usando o laço for para percorrer o array
+    for (var i = 0; i < frutas.length; i++) {
+      // Criar um item <li> para cada fruta
+      var item = document.createElement("li");
+      item.textContent = frutas[i];
+
+      // Adiciona o <li> dentro da <ul>
+      lista.appendChild(item);
+    }
+  </script>
+
+</body>
+</html>

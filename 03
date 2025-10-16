@@ -29,6 +29,7 @@
 </div>
 
 <script>
+  
   var linguagens = [], frutas = [];
 
   function criar(tipo) {

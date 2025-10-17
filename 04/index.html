@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pilha de Pessoas</title>
+</head>
+<body>
+
+    <h1>Gerenciando uma Pilha de Pessoas</h1>
+
+    <input type="text" id="nomePessoa" placeholder="Digite um nome">
+    <button onclick="adicionarPessoa()">Adicionar</button>
+    <button onclick="removerPessoa()">Remover</button>
+
+    <ul id="listaPessoas"></ul>
+
+    <script>
+        // 1. Criar array vazio
+        let pilhaPessoas = [];
+
+        // 2. Função para adicionar usando push()
+        function adicionarPessoa() {
+            const input = document.getElementById("nomePessoa");
+            const nome = input.value.trim();
+
+            if (nome === "") {
+                alert("Por favor, digite um nome!");
+                return;
+            }
+
+            pilhaPessoas.push(nome); // adiciona na pilha
+            input.value = ""; // limpa o campo
+            atualizarLista();
+        }
+
+        // 3. Função para remover usando pop()
+        function removerPessoa() {
+            if (pilhaPessoas.length === 0) {
+                alert("A pilha está vazia!");
+                return;
+            }
+
+            const nomeRemovido = pilhaPessoas.pop(); // remove o último
+            alert(`Removido: ${nomeRemovido}`);
+            atualizarLista();
+        }
+
+        // Atualiza a exibição da lista
+        function atualizarLista() {
+            const lista = document.getElementById("listaPessoas");
+            lista.innerHTML = "";
+
+            for (let i = pilhaPessoas.length - 1; i >= 0; i--) {
+                const li = document.createElement("li");
+                li.textContent = pilhaPessoas[i];
+                lista.appendChild(li);
+            }
+        }
+    </script>
+
+</body>
+</html>

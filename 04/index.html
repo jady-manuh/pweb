@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pilha de Pessoas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e6ccff, #f3e5f5);
+            text-align: center;
+            padding: 30px;
+            color: #4b0082;
+        }
+
+        h1 {
+            color: #800080;
+        }
+
+        button {
+            background-color: #dda0dd;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ba55d3;
+        }
+
+        input {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #d8bfd8;
+            margin-right: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            background-color: #f3e5f5;
+            padding: 10px;
+            margin: 5px auto;
+            width: 200px;
+            border-radius: 6px;
+            color: #4b0082;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pilha de Pessoas</h1>
+
+    <input type="text" id="nome" placeholder="Digite um nome">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="remover()">Remover</button>
+    <button onclick="inverterPilha()">Inverter Pilha</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        let pilhaPessoas = [];
+
+        function adicionar() {
+            let nome = document.getElementById("nome").value;
+            if (nome === "") {
+                alert("Digite um nome!");
+                return;
+            }
+
+            pilhaPessoas.push(nome);
+            document.getElementById("nome").value = "";
+            mostrarLista();
+        }
+
+        function remover() {
+            if (pilhaPessoas.length === 0) {
+                alert("A pilha está vazia!");
+                return;
+            }
+
+            pilhaPessoas.pop();
+            mostrarLista();
+        }
+
+        function inverterPilha() {
+            if (pilhaPessoas.length === 0) {
+                alert("A pilha está vazia!");
+                return;
+            }
+
+            let novaPilha = [];
+            while (pilhaPessoas.length > 0) {
+                novaPilha.push(pilhaPessoas.pop());
+            }
+            pilhaPessoas = novaPilha;
+            mostrarLista();
+        }
+
+        function mostrarLista() {
+            let lista = document.getElementById("lista");
+            lista.innerHTML = "";
+
+            for (let i = pilhaPessoas.length - 1; i >= 0; i--) {
+                let item = document.createElement("li");
+                item.textContent = pilhaPessoas[i];
+                lista.appendChild(item);
+            }
+        }
+    </script>
+
+</body>
+</html>

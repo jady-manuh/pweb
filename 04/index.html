@@ -56,70 +56,60 @@
 </head>
 <body>
 
-    <h1>Pilha de Pessoas</h1>
+    <h1>Gerenciando uma Pilha de Pessoas</h1>
 
-    <input type="text" id="nome" placeholder="Digite um nome">
-    <button onclick="adicionar()">Adicionar</button>
-    <button onclick="remover()">Remover</button>
-    <button onclick="inverterPilha()">Inverter Pilha</button>
+    <input type="text" id="nomePessoa" placeholder="Digite um nome">
+    <button onclick="adicionarPessoa()">Adicionar</button>
+    <button onclick="removerPessoa()">Remover</button>
 
-    <ul id="lista"></ul>
+    <ul id="listaPessoas"></ul>
 
     <script>
+        // 1. Criar array vazio
         let pilhaPessoas = [];
 
-        function adicionar() {
-            let nome = document.getElementById("nome").value.trim();
+        // 2. Função para adicionar usando push()
+        function adicionarPessoa() {
+            const input = document.getElementById("nomePessoa");
+            const nome = input.value.trim();
 
             if (nome === "") {
                 alert("Por favor, digite um nome!");
                 return;
             }
 
-            pilhaPessoas.push(nome);
-            alert(`"${nome}" foi adicionado à pilha!`);
-            document.getElementById("nome").value = "";
-            mostrarLista();
+            pilhaPessoas.push(nome); // adiciona na pilha
+            input.value = ""; // limpa o campo
+            atualizarLista();
         }
 
-        function remover() {
+        // 3. Função para remover usando pop()
+        function removerPessoa() {
             if (pilhaPessoas.length === 0) {
-                alert(" A pilha está vazia! Nada para remover.");
+                alert("A pilha está vazia!");
                 return;
             }
 
-            let removido = pilhaPessoas.pop();
-            alert(` "${removido}" foi removido da pilha.`);
-            mostrarLista();
+            const nomeRemovido = pilhaPessoas.pop(); // remove o último
+            alert(`Removido: ${nomeRemovido}`);
+            atualizarLista();
         }
 
-        function inverterPilha() {
-            if (pilhaPessoas.length === 0) {
-                alert(" A pilha está vazia! Nada para inverter.");
-                return;
-            }
-
-            let novaPilha = [];
-            while (pilhaPessoas.length > 0) {
-                novaPilha.push(pilhaPessoas.pop());
-            }
-
-            pilhaPessoas = novaPilha;
-            alert("🔄 Pilha invertida com sucesso!");
-            mostrarLista();
-        }
-
-        function mostrarLista() {
-            let lista = document.getElementById("lista");
+        // Atualiza a exibição da lista
+        function atualizarLista() {
+            const lista = document.getElementById("listaPessoas");
             lista.innerHTML = "";
 
             for (let i = pilhaPessoas.length - 1; i >= 0; i--) {
-                let item = document.createElement("li");
-                item.textContent = pilhaPessoas[i];
-                lista.appendChild(item);
+                const li = document.createElement("li");
+                li.textContent = pilhaPessoas[i];
+                lista.appendChild(li);
             }
         }
     </script>
+
+
+
 
 </body>
 </html>

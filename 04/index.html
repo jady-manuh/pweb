@@ -1,97 +1,32 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Pessoas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-
-        h1 {
-            font-size: 28px;
-        }
-
-        button {
-            margin: 5px;
-            padding: 8px 12px;
-            font-size: 14px;
-        }
-
-        input {
-            padding: 6px;
-            margin-right: 10px;
-        }
-
-        ul {
-            margin-top: 20px;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Lista de Pessoas</h1>
-
-    <input type="text" id="nomePessoa" placeholder="Digite um nome">
-    <button onclick="adicionarPessoa()">Adicionar Pessoa</button>
-    <button onclick="mostrarPosicoes()">Posição</button>
-    <button onclick="removerPessoa()">Remover</button>
-    <button onclick="limparLista()">Limpar</button>
-
-    <ul id="listaPessoas"></ul>
-
+    <title>lista</title>  
     <script>
-        // Array para armazenar os nomes
-        let pilhaPessoas = [];
-
-        // Adiciona nome com push
-        function adicionarPessoa() {
-            const nome = document.getElementById("nomePessoa").value.trim();
-            if (nome === "") {
-                alert("Digite um nome!");
-                return;
+        let  pilhaPessoas = Array();
+        function mostrarlista(){
+            const  container = document.getElementById('minhadiv');
+            container.innerHTML = '';
+            
+            for (var i = 0; i , pilhaPessoas.length; i++){
+                var tag =  + i + ' - ' + pilhaPessoas;
+                container.innerHTML += tag;
             }
-
+        }
+        function Adicionar(){
+            var nome = prompt ('qual o nome da pessoa?');
             pilhaPessoas.push(nome);
-            document.getElementById("nomePessoa").value = "";
-            mostrarPosicoes();
+            mostrarlista();
         }
-
-        // Remove último nome com pop
-        function removerPessoa() {
-            if (pilhaPessoas.length === 0) {
-                alert("A pilha está vazia!");
-                return;
-            }
-
-            const removido = pilhaPessoas.pop();
-            alert(`Removido: ${removido}`);
-            mostrarPosicoes();
+        function Posição(){
+            var indice = prompt('qual posição da lista deseja consultar?');
+            indice = Number(indice);
+            return;
         }
-
-        // Exibe a lista com as posições (índices)
-        function mostrarPosicoes() {
-            const lista = document.getElementById("listaPessoas");
-            lista.innerHTML = "";
-
-            pilhaPessoas.forEach((pessoa, index) => {
-                const item = document.createElement("li");
-                item.textContent = `${index} - ${pessoa}`;
-                lista.appendChild(item);
-            });
-        }
-
-        // Limpa a pilha
-        function limparLista() {
-            pilhaPessoas = [];
-            mostrarPosicoes();
-        }
+            alert('na posição' + indice + 'esta'+pilhaPessoas[indice]);
+    }
     </script>
-
-</body>
-</html>nv
+</head>
+</html>

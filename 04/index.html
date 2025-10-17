@@ -69,30 +69,33 @@
         let pilhaPessoas = [];
 
         function adicionar() {
-            let nome = document.getElementById("nome").value;
+            let nome = document.getElementById("nome").value.trim();
+
             if (nome === "") {
-                alert("Digite um nome!");
+                alert("Por favor, digite um nome!");
                 return;
             }
 
             pilhaPessoas.push(nome);
+            alert(`"${nome}" foi adicionado à pilha!`);
             document.getElementById("nome").value = "";
             mostrarLista();
         }
 
         function remover() {
             if (pilhaPessoas.length === 0) {
-                alert("A pilha está vazia!");
+                alert(" A pilha está vazia! Nada para remover.");
                 return;
             }
 
-            pilhaPessoas.pop();
+            let removido = pilhaPessoas.pop();
+            alert(` "${removido}" foi removido da pilha.`);
             mostrarLista();
         }
 
         function inverterPilha() {
             if (pilhaPessoas.length === 0) {
-                alert("A pilha está vazia!");
+                alert(" A pilha está vazia! Nada para inverter.");
                 return;
             }
 
@@ -100,7 +103,9 @@
             while (pilhaPessoas.length > 0) {
                 novaPilha.push(pilhaPessoas.pop());
             }
+
             pilhaPessoas = novaPilha;
+            alert("🔄 Pilha invertida com sucesso!");
             mostrarLista();
         }
 

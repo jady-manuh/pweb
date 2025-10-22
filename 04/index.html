@@ -1,32 +1,91 @@
 <!DOCTYPE html>
-
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>lista</title>  
-    <script>
-        let  pilhaPessoas = Array();
-        function mostrarlista(){
-            const  container = document.getElementById('minhadiv');
-            container.innerHTML = '';
-            
-            for (var i = 0; i , pilhaPessoas.length; i++){
-                var tag =  + i + ' - ' + pilhaPessoas;
-                container.innerHTML += tag;
-            }
-        }
-        function Adicionar(){
-            var nome = prompt ('qual o nome da pessoa?');
-            pilhaPessoas.push(nome);
-            mostrarlista();
-        }
-        function Posição(){
-            var indice = prompt('qual posição da lista deseja consultar?');
-            indice = Number(indice);
-            return;
-        }
-            alert('na posição' + indice + 'esta'+pilhaPessoas[indice]);
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Frutas</title>
 </head>
+<script>
+    let pilhaPessoas = [];
+
+    function mostrarLista() {
+      const container = document.getElementById('MinhaDiv');
+      container.innerHTML = '';
+
+      for (var i = 0; i < pilhaPessoas.length; i++) {
+        var tag = '<h5>' + i + ' - ' + pilhaPessoas[i] + '</h5>';
+        container.innerHTML += tag;
+      }
+    }
+
+    function adicionar() {
+      var nome = prompt('Qual o nome da pessoa?');
+      if (nome === null || nome.trim() === '') {
+        alert('Nome inválido! Por favor, digite um nome válido.');
+        return;
+      }
+      pilhaPessoas.push(nome.trim());
+      mostrarLista();
+    }
+
+    function posicao() {
+      var entrada = prompt('Qual posição deseja consultar?');
+      var indice = Number(entrada);
+
+      // Verifica se é número e inteiro
+      if (entrada === null || entrada.trim() === '' || isNaN(indice) || !Number.isInteger(indice)) {
+        alert('Por favor, insira um número inteiro válido.');
+        return;
+      }
+
+      if (indice < 0 || indice >= pilhaPessoas.length) {
+        alert('Posição inválida!');
+        return;
+      }
+      alert('Na posição ' + indice + ' está: ' + pilhaPessoas[indice]);
+    }
+
+    function remover() {
+      if (pilhaPessoas.length === 0) {
+        alert('A pilha está vazia!');
+        return;
+      }
+      let removido = pilhaPessoas.pop();
+      alert('Removido! ' + removido);
+      mostrarLista();
+    }
+
+    function limparLista() {
+      if (pilhaPessoas.length === 0) {
+        alert('A lista está vazia!');
+        return;
+      }
+      pilhaPessoas = [];
+      mostrarLista();
+    }
+
+    function inverterPilha() {
+      if (pilhaPessoas.length === 0) {
+        alert('A lista está vazia!');
+        return;
+      }
+      pilhaPessoas.reverse();
+      mostrarLista();
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Lista de Pessoas</h1>
+
+  <button onclick="adicionar()">Adicionar Pessoa</button>
+  <button onclick="posicao()">Posição</button>
+  <button onclick="remover()">Remover</button>
+  <button onclick="limparLista()">Limpar</button>
+  <button onclick="inverterPilha()">Inverter Pilha</button>
+
+  <div id="MinhaDiv"></div>
+
+  <hr>
+</body>
 </html>

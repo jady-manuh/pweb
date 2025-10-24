@@ -54,7 +54,7 @@ hr {
 
       for (let i = 0; i < pilhadelivros.length; i++) {
         const livros = pilhadelivros[i];
-        const tag = '<h5>' + i + '- Titulo: ' + livros.titulo + ' | Autor: '+ livros.Autor + '- Ano:' + livros.ano + '</5>';
+        const tag = '<h5>' + i + '- Titulo: ' + livros.titulo + ' | Autor: '+  livros.Autor + '- Ano:' + livros.ano + '</5>';
         container.innerHTML += tag;
       }
     }
@@ -87,7 +87,7 @@ hr {
         return;
       }
 
-      const pessoa = pilhadelivros[indice];
+      const livros= pilhadelivros[indice];
       alert('Na posição ' + indice + ' está: titulo: ' + livros.titulo + ' - autor: ' + livros.autor + '-ano:'+ livros.ano);
     }
 

@@ -82,25 +82,25 @@ hr {
     function posicao() {
       const indice = Number(prompt('Qual posição da lista deseja consultar?'));
 
-      if (indice < 0 || indice >= pilhaPessoas.length) {
+      if (indice < 0 || indice >= pilhadelivros.length) {
         alert('Posição inválida!');
         return;
       }
 
-      const pessoa = pilhaPessoas[indice];
+      const pessoa = pilhadelivros[indice];
       alert('Na posição ' + indice + ' está: titulo: ' + livros.titulo + ' - autor: ' + livros.autor + '-ano:'+ livros.ano);
     }
 
     function limparLista() {
-      pilhaPessoas = [];
+      pilhadelivros = [];
       mostrarLista();
     }
 
     function remover() {
-      if (pilhaPessoas.length === 0) {
+      if (pilhadelivros.length === 0) {
         alert('A pilha está vazia!');
       } else {
-        const removido = pilhaPessoas.pop();
+        const removido = pilhadelivros.pop();
         alert('Removido: ' + removido.titulo + ' - ' + removido.autor + '-'+ removido.ano);
         mostrarLista();
       }
